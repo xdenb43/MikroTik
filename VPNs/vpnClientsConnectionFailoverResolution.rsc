@@ -11,7 +11,6 @@
 #    77.88.8.1 - Yandex secondary DNS
 #    77.88.8.2 - Yandex secure DNS
 #    1.1.1.3   - CF Family DNS
-
 #
 # Cheat by @wiktorbgu MUST be used to have WG working
 # https://gist.github.com/wiktorbgu/1f2dfe99837d8f2803483be95814d2e5
