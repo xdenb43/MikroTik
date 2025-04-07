@@ -1,3 +1,6 @@
+# adguard home to container | by @xdenb43
+# tested on hap ax3/RoS 7.17.2+
+
 # enable containers, follow https://help.mikrotik.com/docs/spaces/ROS/pages/84901929/Container
 /system/device-mode/update container=yes
 
