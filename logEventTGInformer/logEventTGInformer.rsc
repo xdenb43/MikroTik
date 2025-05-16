@@ -1,17 +1,13 @@
-# logEventTGInformer | by @xdenb43
-# Sends log events filtered by condition to speicific topic of telegram group
-#
-# /!\ tested on hap ax3, RoS 7.17.2+
-# /!\ Known issue: parser failes for keyword "HTTP"
-
+# logEventTGInformer | by @denb43
+# tested on RoS 7.18.1
 # BEGIN SETUP
-:local tgBotToken $BOT_TOKEN (e.g "21324wXz3234nU23424");
-:local tgChatId $GROUP_CHAT_ID (e.g. "-100123124314");
-:local tgTopicId $GROUP_TOPIC_ID (e.g. "14");
+:local tgBotToken "$TOKEN";
+:local tgChatId "$CHATID";
+:local tgTopicId "$GROUPTOPICID";
 :local tgUrl "https://api.telegram.org/bot$tgBotToken/sendMessage?chat_id=$tgChatId&message_thread_id=$tgTopicId&text=";
-:local mikrotId ("\E2\9D\97"." "."*Device:*"." `".[/system identity get name]." ".[/system resource get board-name]."` \E2\9D\97");
+:local mikrotId ("\E2\9D\97"." `".[/system identity get name]." ".[/system resource get board-name]."` \E2\9D\97");
 :local scheduleName "logEventTGInformer";
-:local logsBuffer [:toarray [/log find topics~"(error|critical)" || message~"([fF]ailure|router rebooted)"]]
+:local logsBuffer [:toarray [/log find topics~"(error|critical|netwatch)" || message~"([fF]ailure|router rebooted)"]]
 :local ignoreInLog {"static dns entry changed"; "changed script settings"; "HTTP"}
 #:local ignoreInLog [:toarray " "]
 # Telegram messages can currently hold up to 4KB of text (4096 latin characters).
