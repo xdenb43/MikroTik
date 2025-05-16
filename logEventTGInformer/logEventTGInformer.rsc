@@ -1,5 +1,9 @@
-# logEventTGInformer | by @denb43
-# tested on RoS 7.18.1
+# logEventTGInformer | by @xdenb43
+# Sends log events filtered by condition to speicific topic of telegram group
+#
+# /!\ tested on hap ax3, RoS 7.17.2+
+# /!\ Known issue: parser failes for keyword "HTTP"
+
 # BEGIN SETUP
 :local tgBotToken "$TOKEN";
 :local tgChatId "$CHATID";
